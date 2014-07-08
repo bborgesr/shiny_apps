@@ -18,14 +18,14 @@ require(shiny)
 Once this is done, you can run any of the three apps as many times as you want with only one line of code. For example, for the `join` app, type:
 
 ```{r}
-shiny::runGitHub('join', 'bborgesr/shiny')
+shiny::runGitHub("shiny", "bborgesr", subdir = "join")
 ```
 
 Similarly, for the `group` and `rmd` apps:
 
 ```{r}
-shiny::runGitHub('group', 'bborgesr/shiny')
-shiny::runGitHub('rmd', 'bborgesr/shiny')
+shiny::runGitHub("shiny", "bborgesr", subdir = "group")
+shiny::runGitHub("shiny", "bborgesr", subdir = "rmd")
 ```
 
 =====
