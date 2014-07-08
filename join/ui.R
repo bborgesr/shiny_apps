@@ -6,7 +6,8 @@ shinyUI(fluidPage(
   titlePanel("Visualizing a Join"),
   
   fluidRow(
-    p("Welcome to this great app!")),
+    p("An app to help you understand and visualize the process 
+      of joining two data frames in R")),
   
   tabsetPanel(
     

@@ -5,7 +5,9 @@ shinyUI(fluidPage(
   titlePanel("Visualizing 'Group by' and 'Summarise'"),
   
   fluidRow(
-    p("Welcome to this great app!")),
+    p("an app to help you understand and visualize the process of
+      grouping by and summarizing data frames in R (using the `dplyr`
+      package)")),
   
   br(),
   br(),
