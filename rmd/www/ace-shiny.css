@@ -1,0 +1,35 @@
+#proxy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
+
+/*
+*/
+#checkbox {
+  /* position: absolute;*/
+  float: right;
+  top: 0;
+  right: 0;
+}
+/*
+*/
+
+#notebook {
+  position: absolute;
+  width: 400px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+#nbOut {
+  position: absolute;
+  left: 400px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding-right: 5px;
+  overflow-y: scroll;
+}
