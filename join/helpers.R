@@ -1,8 +1,9 @@
 library(mosaic)
+library(DCFdevel)
 
 fancierTable = function(left, right, df, default = c("none", "left", "right"),
                         by = c("none", var)){
- 
+  
   header_html <- function(table_cell) paste0('<th>', table_cell, '</th>')    
   
   side <- function(table_col_name) {
@@ -72,7 +73,7 @@ fancierTable = function(left, right, df, default = c("none", "left", "right"),
           }
         }
       }
-
+      
       cell <- cell_html(df[i,j], colorL, colorR, cellSide)
       
       cells[i,j] <- cell
@@ -113,11 +114,11 @@ joinHelp <- function(tab1, tab2, n1, n2, tab1var, tab2var, joinType) {
   right$rowNum = 1:nrow(right)  
   
   result <- switch( joinType, 
-          "Inner Join"        = c(TRUE, FALSE, FALSE),
-          "Left Outer Join"   = c(TRUE, TRUE, FALSE),
-          "Right Outer Join"  = c(TRUE, FALSE, TRUE),
-          "Full Outer Join"   = c(TRUE, TRUE, TRUE),
-          "Cross Join"        = c(FALSE))
+                    "Inner Join"        = c(TRUE, FALSE, FALSE),
+                    "Left Outer Join"   = c(TRUE, TRUE, FALSE),
+                    "Right Outer Join"  = c(TRUE, FALSE, TRUE),
+                    "Full Outer Join"   = c(TRUE, TRUE, TRUE),
+                    "Cross Join"        = c(FALSE))
   
   if (result[1] == TRUE) {
     byx = tab1var
@@ -134,11 +135,34 @@ joinHelp <- function(tab1, tab2, n1, n2, tab1var, tab2var, joinType) {
   }
   
   newTab <- merge(x = left, y = right, by.x = byx, 
-                 by.y = byy, all.x = allx, all.y = ally)
+                  by.y = byy, all.x = allx, all.y = ally)
   
   by <- byx
   if (is.null(byx)) {by <- "none"}
   
   return(list(left=left, right=right, join=newTab, by=by))
   
+}
+
+
+CIAdata <- function (code = NULL) 
+{
+  CIA = read.csv(system.file("LocalData", "CIA.csv", package = "DCFdevel"), 
+                 stringsAsFactors = FALSE)
+  if (is.null(code)) {
+    return(CIA)
+  }
+  else {
+    if (code %in% CIA$Code) {
+      sub <- subset(CIA, Code == code)
+      url <- (paste0("https://www.cia.gov/library/publications/the-world-factbook/rankorder/rawdata_", 
+                     code, ".txt"))
+      table <- read.delim(url, header = FALSE, stringsAsFactors = FALSE)
+      table[, 1] <- NULL
+      names(table) <- c("country", sub[["Name"]])
+      table[[2]] = as.numeric(gsub("[^.+([:digit:] ]", "", 
+                                   table[[2]]))
+      return(table)
+    }
+  }
 }

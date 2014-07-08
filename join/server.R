@@ -2,8 +2,16 @@ library(shiny)
 library(mosaic)
 source("helpers.R")
 
-datasets <- list( Galton = Galton, Heightweight = Heightweight,
-                  SwimRecords = SwimRecords, TenMileRace = TenMileRace)
+datasets <- list( Galton = Galton, 
+                  Heightweight = Heightweight,
+                  SwimRecords = SwimRecords,
+                  TenMileRace = TenMileRace,
+                  "Maternal Death Rates" = CIAdata(2223),
+                  "Obesity Rates" = CIAdata(2228),
+                  "GDP" = CIAdata(2001),
+                  "Electrical Production" = CIAdata(2232),
+                  "Roadways (km)" = CIAdata(2085))
+
 
 shinyServer(
   function(input, output, session) {
