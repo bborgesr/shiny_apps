@@ -6,7 +6,7 @@ This repository includes three Shiny Apps:
  
 - **group**: an app to help you understand and visualize the process of grouping by and summarizing data frames in R (using the `dplyr` package).
 
-- **rmd**: an app that lets you interactively type an RMarkdown document and immediately visualize the compiled version of the document (side by side display). When you run this app, the first thing that will happen is a window popping up, prompting you to select an Rmd document.
+- **rmd**: an app that lets you interactively type an RMarkdown document and immediately visualize the compiled version of the document (side by side display). When you run this app, the first thing that will happen is a window popping up, prompting you to select an Rmd document. (_Note_: this app was very very heavily borrowed from Yihui Xie's brilliant `knitr` package.)
 
 In order to run the apps, you'll first need to install and load the `Shiny` package (you will only need to do this once):
 
