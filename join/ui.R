@@ -3,7 +3,7 @@ library(shiny)
 
 shinyUI(fluidPage(
   
-  titlePanel("Visualizing a Join"),
+  titlePanel("Visualizing 4 Joins"),
   
   fluidRow(
     p("An app to help you understand and visualize the process 
