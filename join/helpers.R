@@ -145,23 +145,19 @@ joinHelp <- function(tab1, tab2, n1, n2, tab1var, tab2var, joinType) {
 }
 
 
-CIAdata <- function (code = NULL) 
-{
-  CIA = read.csv(system.file("LocalData", "CIA.csv", package = "DCFdevel"), 
-                 stringsAsFactors = FALSE)
+CIAdata <- function (code=NULL) {
+  CIA = read.csv(system.file("LocalData","CIA.csv",package='DCFdevel'), stringsAsFactors=FALSE)
   if (is.null(code)) {
     return(CIA)
-  }
-  else {
+  } else {
     if (code %in% CIA$Code) {
-      sub <- subset(CIA, Code == code)
-      url <- (paste0("https://www.cia.gov/library/publications/the-world-factbook/rankorder/rawdata_", 
-                     code, ".txt"))
-      table <- read.delim(url, header = FALSE, stringsAsFactors = FALSE)
-      table[, 1] <- NULL
+      sub <- subset(CIA, Code==code)
+      url <- (paste0("https://www.cia.gov/library/publications/the-world-factbook/rankorder/rawdata_", code, ".txt"))
+      table <- read.delim(textConnection(getURL(url, ssl.verifypeer=FALSE )), 
+                          header=FALSE, stringsAsFactors=FALSE)
+      table[,1]<-NULL
       names(table) <- c("country", sub[["Name"]])
-      table[[2]] = as.numeric(gsub("[^.+([:digit:] ]", "", 
-                                   table[[2]]))
+      table[[2]] = as.numeric(gsub("[^.+[:digit:] ]", "", table[[2]]))
       return(table)
     }
   }
