@@ -1,4 +1,5 @@
 library(mosaic)
+library(dplyr)
 
 
 tableHelp <- function(tab, n) {  
@@ -31,23 +32,30 @@ normalCellCol <- function(df, group) {
 }
 
 
+header_html <- function(table_cell) paste0('<th>', table_cell, '</th>')    
 
-normalTable = function(df, group, order = c(FALSE, TRUE)) {
-  
-  header_html <- function(table_cell) paste0('<th>', table_cell, '</th>')    
-  
-  cell_html <- function(table_cell, col) {
-    cellStyle <- paste0("style='text-align:center;background-color:", 
-                        col, "'", collapse='')
-    paste0('<td ', cellStyle, '>', table_cell, '</td>')    
-  }  
-  
-  row_html <- function(cells) {
-    collapse_cells <- paste0(cells, collapse='')                                   
-    collapse_cells <- paste0('<tr>', collapse_cells, '</tr>')
-    collapse_cells 
-  }
-  
+cell_html <- function(table_cell, col) {
+  cellStyle <- paste0("style='text-align:center;background-color:", 
+                      col, "'", collapse='')
+  paste0('<td ', cellStyle, '>', table_cell, '</td>')    
+}  
+
+row_html <- function(cells) {
+  collapse_cells <- paste0(cells, collapse='')                                   
+  collapse_cells <- paste0('<tr>', collapse_cells, '</tr>')
+  collapse_cells 
+}
+
+end_table <- function(df, cells) {
+  df_header_row <- header_html(c(names(df)))
+  df_rows <- sapply(split(cells, 1:nrow(df)), row_html)
+  collapse_cells <- paste0(c(df_header_row, df_rows), collapse='')    
+  full_table <- paste0('<table class=\"data table table-bordered table-condensed\">', 
+                       collapse_cells, '</table>')
+  full_table
+}
+
+normalTable = function(df, group, order = c(FALSE, TRUE)) {  
   for (i in 1:length(group) ) {
     df[[ group[[i]] ]] <- as.factor(df[[ group[[i]] ]])
   }
@@ -76,14 +84,7 @@ normalTable = function(df, group, order = c(FALSE, TRUE)) {
   colNum <- grep('grouping', names(df))
   cells <- cells[,-colNum]
   df <- df[,-colNum]
-  
-  df_header_row <- header_html(c(names(df)))
-  df_rows <- sapply(split(cells, 1:nrow(df)), row_html)
-  collapse_cells <- paste0(c(df_header_row, df_rows), collapse='')    
-  full_table <- paste0('<table class=\"data table table-bordered table-condensed\">', 
-                       collapse_cells, '</table>')
-  
-  return(full_table)
+  return(end_table(df,cells))
 }
 
 
@@ -101,7 +102,45 @@ summarTable <- function(df, group, conditions) {
   }  
   colnames(df)[which(names(df) == "grouping")] <- name
   df[,sapply(df, is.numeric)] <-round(df[,sapply(df, is.numeric)],2)
-  fancierTable(df, name, order=TRUE)
+  normalTable(df, name, order=TRUE)
+}
+
+
+beigeTable = function(df) {
+  cells <- data.frame() 
+  for (i in 1:nrow(df)) {
+    for (j in 1:ncol(df)) {   
+      col <- paste0("rgba(", 234, ",", 211, ",", 168, ",", "0.3)", 
+                    collapse='')
+      cell <- cell_html(df[i,j], col)      
+      cells[i,j] <- cell
+    }
+  }
+  return(end_table(df,cells))
+}
+
+
+filterTable <- function(df, conditions) {
+  exp <- strsplit(conditions, ",")
+  exp <- exp[[1]]
+  df <- df  %.% group_by(names(df)[1]) %.% s_filter(exp)
+  df <- df[-ncol(df)]
+  beigeTable(df)
+}
+
+selectTable <- function(df, conditions) {
+  exp <- strsplit(conditions, ",")
+  exp <- exp[[1]]
+  df <- df %.% s_select(exp)
+  beigeTable(df)
+}
+
+mutateTable <- function(df, conditions) {
+  exp <- strsplit(conditions, ",")
+  exp <- exp[[1]]
+  df2 <- df  %.% group_by(names(df)[1]) %.% s_mutate(exp)
+  df2 <- df2[-(ncol(df)+1)]
+  beigeTable(df2)
 }
 
 
@@ -115,9 +154,20 @@ eval.string.dplyr = function(.data, .fun.name, ...) {
   df  
 }
 
-
 s_summarise = function(.data, ...) {
   eval.string.dplyr(.data,"summarise", ...)
+}
+
+s_mutate = function(.data, ...) {
+  eval.string.dplyr(.data,"mutate", ...)
+}
+
+s_select = function(.data, ...) {
+  eval.string.dplyr(.data,"select", ...)
+}
+
+s_filter = function(.data, ...) {
+  eval.string.dplyr(.data,"filter", ...)
 }
 
 ##

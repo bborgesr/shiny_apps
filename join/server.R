@@ -1,6 +1,8 @@
 library(shiny)
 library(mosaic)
+library(RCurl)
 source("helpers.R")
+
 
 datasets <- list( Galton = Galton, 
                   Heightweight = Heightweight,
@@ -13,8 +15,11 @@ datasets <- list( Galton = Galton,
                   "Roadways (km)" = CIAdata(2085))
 
 
+
 shinyServer(
   function(input, output, session) {
+    
+    
     
     ## Data Selection
     
@@ -56,20 +61,15 @@ shinyServer(
     
     output$tab1DS <- renderText({
       helper = tableHelp(tab1(), tab1n())
-      left = helper$left
-      right = helper$right
-      HTML(fancierTable(left, right, left, 
-                        default="left", by = "none"))
+      HTML(beigeTable(df=helper))
     })
     
     output$tab2DS <- renderText({
-      helper = tableHelp(tab1(), tab2(), tab1n(), tab2n())
-      left = helper$left
-      right = helper$right
-      HTML(fancierTable(left, right, right, 
-                        default="right", by = "none"))
+      helper = tableHelp(tab2(), tab2n())
+      HTML(beigeTable(df=helper))
     })    
     
+  
     
     ## Filter and Select
     
@@ -88,11 +88,18 @@ shinyServer(
     })
     
     output$tabFS <- renderText({ 
-      helper = tableHelp(tab1(), tab2(), tab1n(), tab2n())
-      left = helper$left
-      right = helper$right
-      HTML(fancierTable(left, right, left, 
-                        default="left", by = "none"))
+      helper = tableHelp(tab1(), tab1n())
+      HTML(beigeTable(df=helper))
+    })
+
+    output$tabFilter <- renderText({
+      helper = tableHelp(tab1(), tab1n())
+      HTML(filterTable(df=helper, conditions=input$filterCondition))
+    })
+    
+    output$tabSelect <- renderText({
+      helper = tableHelp(tab1(), tab1n())
+      HTML(selectTable(df=helper, conditions=input$selectCondition))
     })
     
     ## Mutate
@@ -114,11 +121,13 @@ shinyServer(
     })
     
     output$tabM <- renderText({ 
-      helper = tableHelp(tab1(), tab2(), tab1n(), tab2n())
-      left = helper$left
-      right = helper$right
-      HTML(fancierTable(left, right, left, 
-                        default="left", by = "none"))
+      helper = tableHelp(tab1(), tab1n())
+      HTML(beigeTable(df=helper))
+    })
+    
+    output$tabMutate <- renderText({
+      helper = tableHelp(tab1(), tab1n())
+      HTML(mutateTable(df=helper, conditions=input$mutateCondition))
     })
     
     
@@ -141,9 +150,13 @@ shinyServer(
       conditions with commas."}
     })
     
-    output$tabGS <- renderText({
+    output$tabnameGS <- renderText({
       updateCheckboxGroupInput(session, "group", choices = names(tab1()),
                                selected=names(tab1())[1])
+      input$tab1
+    })
+    
+    output$tabGS <- renderText({
       helper = tableHelp(tab1(), tab1n())
       HTML(normalTable(df=helper, group=input$group))
     })
@@ -157,6 +170,8 @@ shinyServer(
       helper = tableHelp(tab1(), tab1n())
       HTML(summarTable(df=helper, group=input$group, conditions=input$summar))
     })
+    
+    
     
     
     ## Join
