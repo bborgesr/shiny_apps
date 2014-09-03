@@ -1,4 +1,4 @@
-shiny
+A couple shiny apps
 =====
 
 This repository includes two Shiny Apps:
