@@ -1,10 +1,8 @@
 shiny
 =====
 
-This repository includes three Shiny Apps:
-- **join**: an app to help you understand and visualize the process of joining two data frames in R.
- 
-- **group**: an app to help you understand and visualize the process of grouping by and summarizing data frames in R (using the `dplyr` package).
+This repository includes two Shiny Apps:
+- **dataOp**: an app to help you understand and visualize the process of data manipulations in R (using the `dplyr` package).
 
 - **rmd**: an app that lets you interactively type an RMarkdown document and immediately visualize the compiled version of the document (side by side display). When you run this app, the first thing that will happen is a window popping up, prompting you to select an Rmd document. (_Note_: this app was very very heavily borrowed from Yihui Xie's brilliant `knitr` package.)
 
@@ -15,16 +13,15 @@ install.packages("shiny")
 require(shiny)
 ```
 
-Once this is done, you can run any of the three apps as many times as you want with only one line of code. For example, for the `join` app, type:
+Once this is done, you can run any of the apps as many times as you want with only one line of code. For example, for the `dataOp` app, type:
 
 ```{r}
-shiny::runGitHub("shiny", "bborgesr", subdir = "join")
+shiny::runGitHub("shiny", "bborgesr", subdir = "dataOp")
 ```
 
-Similarly, for the `group` and `rmd` apps:
+Similarly, for the `rmd` apps
 
 ```{r}
-shiny::runGitHub("shiny", "bborgesr", subdir = "group")
 shiny::runGitHub("shiny", "bborgesr", subdir = "rmd")
 ```
 
