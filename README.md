@@ -2,7 +2,7 @@ A couple shiny apps
 =====
 
 This repository includes two Shiny Apps:
-- **dataOp**: an app to help you understand and visualize the process of data manipulations in R (using the `dplyr` package).
+- **dataOp**: an app to help you understand and visualize the process of data manipulations in R (using the `dplyr` package). (_Note_: You will need steady internet access in order to be able to run this app successfully.)
 
 - **rmd**: an app that lets you interactively type an RMarkdown document and immediately visualize the compiled version of the document (side by side display). When you run this app, the first thing that will happen is a window popping up, prompting you to select an Rmd document. (_Note_: this app was very very heavily borrowed from Yihui Xie's brilliant `knitr` package.)
 
