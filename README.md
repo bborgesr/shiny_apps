@@ -9,14 +9,14 @@ This repository includes two Shiny Apps:
 In order to run the apps, you'll first need to install and load the `Shiny` package (you will only need to do this once):
 
 ```{r}
-install.packages("shiny")
+install.packages("shiny_apps")
 require(shiny)
 ```
 
 Once this is done, you can run any of the apps as many times as you want with only one line of code. For example, for the `dataOp` app, type:
 
 ```{r}
-shiny::runGitHub("shiny", "bborgesr", subdir = "dataOp")
+shiny::runGitHub("shiny", "bborgesr", subdir = "dplyr_app")
 ```
 
 Similarly, for the `rmd` apps
