@@ -13,16 +13,16 @@ install.packages("shiny_apps")
 require(shiny)
 ```
 
-Once this is done, you can run any of the apps as many times as you want with only one line of code. For example, for the `dataOp` app, type:
+Once this is done, you can run any of the apps as many times as you want with only one line of code. For example, for the `dplyr_app` app, type:
 
 ```{r}
-shiny::runGitHub("shiny", "bborgesr", subdir = "dplyr_app")
+shiny::runGitHub("shiny_apps", "bborgesr", subdir = "dplyr_app")
 ```
 
 Similarly, for the `rmd` apps
 
 ```{r}
-shiny::runGitHub("shiny", "bborgesr", subdir = "rmd")
+shiny::runGitHub("shiny_apps", "bborgesr", subdir = "rmd")
 ```
 
 =====
