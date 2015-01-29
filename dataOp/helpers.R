@@ -92,7 +92,7 @@ normalTable = function(df, group, order = c(FALSE, TRUE)) {
   for (i in 1:nrow(df)) {
     for (j in 1:ncol(df)) {
       
-      level <- df[i, "grouping"]
+      level <- df[[i, "grouping"]]
       col <- colors[,level]
       col <- paste0("rgba(", col[1], ",", col[2], ",", col[3], ",", "0.3)", 
                     collapse='')
