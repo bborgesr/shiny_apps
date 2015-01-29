@@ -4,10 +4,10 @@ library(RCurl)
 source("helpers.R")
 
 
-datasets <- list( Galton = Galton, 
-                  Heightweight = Heightweight,
-                  SwimRecords = SwimRecords,
-                  TenMileRace = TenMileRace,
+datasets <- list( Galton = data.frame(Galton, stringsAsFactors = FALSE), 
+                  Heightweight = data.frame(Heightweight, stringsAsFactors = FALSE), 
+                  SwimRecords = data.frame(SwimRecords, stringsAsFactors = FALSE), 
+                  TenMileRace = data.frame(TenMileRace, stringsAsFactors = FALSE), 
                   "Maternal Death Rates" = read.csv("maternal.csv", stringsAsFactors=FALSE),
                   "Obesity Rates" = read.csv("obesity.csv", stringsAsFactors=FALSE),
                   "GDP" = read.csv("GDP.csv", stringsAsFactors=FALSE),
