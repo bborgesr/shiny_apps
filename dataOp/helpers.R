@@ -1,8 +1,26 @@
-library(mosaic)
-library(mosaicData)
-##library(DCFdevel)
-library(dplyr)
-library(RCurl)
+
+## package installer helper
+## from http://stackoverflow.com/questions/15155814/check-if-r-package-is-installed-then-load-library
+install_load <- function (package1, ...)  {   
+  # convert arguments to vector
+  packages <- c(package1, ...)
+  
+  # start loop to determine if each package is installed
+  for(package in packages){
+    
+    # if package is installed locally, load
+    if(package %in% rownames(installed.packages()))
+      do.call('library', list(package))
+    
+    # if package is not installed locally, download, then load
+    else {
+      install.packages(package)
+      do.call("library", list(package))
+    }
+  } 
+}
+
+install_load(mosaic, mosaicData, dplyr, RCurl)
 
 tableHelp <- function(tab, n) {  
   set.seed(1993)
