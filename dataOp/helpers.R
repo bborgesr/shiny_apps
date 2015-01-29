@@ -320,7 +320,7 @@ joinHelp <- function(tab1, tab2, n1, n2, tab1var, tab2var, joinType) {
 
 
 CIAdata <- function (code=NULL) {
-  CIA = read.csv("CIA.R", stringsAsFactors=FALSE)
+  CIA = read.csv("CIA.csv", stringsAsFactors=FALSE)
   if (is.null(code)) {
     return(CIA)
   } else {
