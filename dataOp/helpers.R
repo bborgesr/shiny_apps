@@ -20,7 +20,7 @@ install_load <- function (package1, ...)  {
   } 
 }
 
-install_load(mosaic, mosaicData, dplyr, RCurl)
+install_load("mosaic", "mosaicData", "dplyr", "RCurl")
 
 tableHelp <- function(tab, n) {  
   set.seed(1993)
