@@ -8,11 +8,11 @@ datasets <- list( Galton = Galton,
                   Heightweight = Heightweight,
                   SwimRecords = SwimRecords,
                   TenMileRace = TenMileRace,
-                  "Maternal Death Rates" = CIAdata(2223),
-                  "Obesity Rates" = CIAdata(2228),
-                  "GDP" = CIAdata(2001),
-                  "Electrical Production" = CIAdata(2232),
-                  "Roadways (km)" = CIAdata(2085))
+                  "Maternal Death Rates" = read.csv("maternal.csv", stringsAsFactors=FALSE),
+                  "Obesity Rates" = read.csv("obesity.csv", stringsAsFactors=FALSE),
+                  "GDP" = read.csv("GDP.csv", stringsAsFactors=FALSE),
+                  "Electrical Production" = read.csv("elecProd.csv", stringsAsFactors=FALSE),
+                  "Roadways (km)" = read.csv("roadways.csv", stringsAsFactors=FALSE))
 
 
 shinyServer(

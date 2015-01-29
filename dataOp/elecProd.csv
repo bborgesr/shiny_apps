@@ -1,0 +1,220 @@
+"country","elecProd"
+"China",5.398e+12
+"United States",4.099e+12
+"European Union",3.255e+12
+"Russia",1.057e+12
+"Japan",9.362e+11
+"India",8.71e+11
+"Canada",6.189e+11
+"France",5.612e+11
+"Brazil",5.307e+11
+"Germany",5.266e+11
+"Korea, South",4.851e+11
+"United Kingdom",3.657e+11
+"Italy",2.993e+11
+"Mexico",2.96e+11
+"Spain",2.768e+11
+"South Africa",2.579e+11
+"Taiwan",2.522e+11
+"Iran",2.397e+11
+"Saudi Arabia",2.392e+11
+"Australia",2.255e+11
+"Turkey",2.177e+11
+"Ukraine",1.981e+11
+"Indonesia",1.738e+11
+"Thailand",1.733e+11
+"Poland",1.534e+11
+"Sweden",1.487e+11
+"Egypt",1.387e+11
+"Venezuela",1.276e+11
+"Norway",1.252e+11
+"Argentina",1.193e+11
+"Malaysia",1.18e+11
+"Vietnam",1.17e+11
+"United Arab Emirates",1.027e+11
+"Netherlands",9.857e+10
+"Pakistan",9.465e+10
+"Kazakhstan",9.053e+10
+"Czech Republic",8.757e+10
+"Belgium",8.337e+10
+"Finland",7.034e+10
+"Austria",6.9e+10
+"Switzerland",6.802e+10
+"Philippines",6.745e+10
+"Chile",6.286e+10
+"Iraq",6.23e+10
+"Colombia",6.182e+10
+"Romania",5.671e+10
+"Greece",5.62e+10
+"Israel",5.577e+10
+"Kuwait",5.555e+10
+"Paraguay",5.353e+10
+"Uzbekistan",5.253e+10
+"Portugal",4.992e+10
+"Singapore",4.795e+10
+"Algeria",4.625e+10
+"Syria",4.376e+10
+"New Zealand",4.354e+10
+"Bulgaria",4.339e+10
+"Bangladesh",4.008e+10
+"Hong Kong",3.997e+10
+"Peru",3.84e+10
+"Serbia",3.765e+10
+"Hungary",3.428e+10
+"Denmark",3.371e+10
+"Belarus",3.282e+10
+"Qatar",3.234e+10
+"Libya",2.972e+10
+"Ireland",2.604e+10
+"Nigeria",2.487e+10
+"Slovakia",2.439e+10
+"Azerbaijan",2.299e+10
+"Ecuador",2.285e+10
+"Morocco",2.113e+10
+"Korea, North",2.104e+10
+"Puerto Rico",2.002e+10
+"Turkmenistan",1.997e+10
+"Oman",1.863e+10
+"Cuba",1.78e+10
+"Tajikistan",1.709e+10
+"Iceland",1.708e+10
+"Slovenia",1.573e+10
+"Tunisia",1.514e+10
+"Kyrgyzstan",1.49e+10
+"Mozambique",1.483e+10
+"Lebanon",1.481e+10
+"Jordan",1.464e+10
+"Croatia",1.424e+10
+"Bahrain",1.316e+10
+"Dominican Republic",1.309e+10
+"Bosnia and Herzegovina",1.293e+10
+"Lithuania",1.227e+10
+"Estonia",1.219e+10
+"Sri Lanka",1.18e+10
+"Zambia",1.119e+10
+"Georgia",9.694e+09
+"Uruguay",9.5e+09
+"Costa Rica",9.473e+09
+"Ghana",8.213e+09
+"Guatemala",8.146e+09
+"Trinidad and Tobago",7.998e+09
+"Zimbabwe",7.808e+09
+"Congo, Democratic Republic of the",7.804e+09
+"Armenia",7.432e+09
+"Bolivia",7.375e+09
+"Burma",7.346e+09
+"Kenya",7.33e+09
+"Yemen",7.292e+09
+"Panama",7.257e+09
+"Bhutan",7.23e+09
+"Sudan",7.193e+09
+"Albania",6.987e+09
+"Honduras",6.486e+09
+"Latvia",6.412e+09
+"Kosovo",5.847e+09
+"Cameroon",5.761e+09
+"El Salvador",5.728e+09
+"Cote d'Ivoire",5.721e+09
+"Macedonia",5.676e+09
+"Angola",5.118e+09
+"Ethiopia",4.929e+09
+"Mongolia",4.48e+09
+"Cyprus",4.443e+09
+"Tanzania",4.302e+09
+"Nicaragua",4.159e+09
+"Jamaica",3.957e+09
+"Montenegro",3.945e+09
+"Brunei",3.723e+09
+"Laos",3.629e+09
+"Nepal",3.431e+09
+"Papua New Guinea",3.35e+09
+"Senegal",2.769e+09
+"Mauritius",2.628e+09
+"Uganda",2.406e+09
+"Malta",2.221e+09
+"Luxembourg",2.07e+09
+"New Caledonia",1.978e+09
+"Malawi",1.973e+09
+"Bahamas, The",1.93e+09
+"Curacao",1.785e+09
+"Gabon",1.777e+09
+"Guam",1.734e+09
+"Suriname",1.57e+09
+"Namibia",1.331e+09
+"Madagascar",1.211e+09
+"Cambodia",1.019e+09
+"Barbados",1.002e+09
+"Afghanistan",986100000
+"Aruba",9.8e+08
+"Guinea",9.69e+08
+"Moldova",9.32e+08
+"South Sudan",881300000
+"Fiji",836100000
+"Virgin Islands",7.94e+08
+"Haiti",7.26e+08
+"Mauritania",7.01e+08
+"Guyana",7e+08
+"Bermuda",6.75e+08
+"French Polynesia",6.72e+08
+"Burkina Faso",6.7e+08
+"Cayman Islands",5.94e+08
+"Congo, Republic of the",5.59e+08
+"Belize",524200000
+"Mali",5.2e+08
+"Swaziland",4.96e+08
+"West Bank",4.45e+08
+"Botswana",429600000
+"Macau",413700000
+"Saint Lucia",3.62e+08
+"Liberia",3.35e+08
+"Djibouti",3.25e+08
+"Somalia",3.1e+08
+"Sint Maarten",304300000
+"Maldives",301100000
+"Eritrea",292500000
+"Cabo Verde",2.87e+08
+"Seychelles",2.83e+08
+"Rwanda",280200000
+"Greenland",276600000
+"Faroe Islands",2.61e+08
+"Niger",2.5e+08
+"Gambia, The",2.3e+08
+"Grenada",201400000
+"Turks and Caicos Islands",2e+08
+"Lesotho",2e+08
+"Micronesia, Federated States of",1.92e+08
+"Gibraltar",166400000
+"Central African Republic",1.6e+08
+"American Samoa",1.55e+08
+"Burundi",1.52e+08
+"Liechtenstein",145300000
+"Sierra Leone",1.45e+08
+"Benin",142100000
+"Saint Vincent and the Grenadines",1.36e+08
+"Saint Kitts and Nevis",1.35e+08
+"Timor-Leste",131700000
+"Togo",127100000
+"Samoa",120200000
+"Antigua and Barbuda",1.15e+08
+"Dominica",100500000
+"Chad",9.8e+07
+"Equatorial Guinea",9.7e+07
+"Andorra",91240000
+"Western Sahara",9e+07
+"Solomon Islands",8.2e+07
+"Guinea-Bissau",6.7e+07
+"Vanuatu",5.5e+07
+"Saint Pierre and Miquelon",5.3e+07
+"British Virgin Islands",5e+07
+"Tonga",4.1e+07
+"Comoros",4e+07
+"Nauru",3.5e+07
+"Cook Islands",31130000
+"Sao Tome and Principe",3e+07
+"Kiribati",2.5e+07
+"Montserrat",2.4e+07
+"Falkland Islands (Islas Malvinas)",1.9e+07
+"Saint Helena, Ascension, and Tristan da Cunha",8e+06
+"Niue",3e+06
+"Northern Mariana Islands",60600
+"Gaza Strip",51000
