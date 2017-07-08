@@ -5,7 +5,7 @@ source("helpers.R")
 
 
 datasets <- list( Galton = data.frame(Galton, stringsAsFactors = FALSE), 
-                  Heightweight = data.frame(Heightweight, stringsAsFactors = FALSE), 
+                  Dimes = data.frame(Dimes, stringsAsFactors = FALSE), 
                   SwimRecords = data.frame(SwimRecords, stringsAsFactors = FALSE), 
                   TenMileRace = data.frame(TenMileRace, stringsAsFactors = FALSE), 
                   "Maternal Death Rates" = read.csv("maternal.csv", stringsAsFactors=FALSE),

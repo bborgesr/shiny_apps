@@ -113,7 +113,7 @@ summarTable <- function(df, group, conditions) {
   exp <- exp[[1]]
   cellColFun <- normalCellCol(df, group)
   df <- cellColFun[[2]]
-  df <- df %.% group_by(grouping) %.% s_summarise(exp)
+  df <- df %>% group_by(grouping) %>% s_summarise(exp)
   name <- group[[1]]
   if (length(group) > 1) {
     for (i in 2:length(group)) {
@@ -143,7 +143,7 @@ beigeTable = function(df) {
 filterTable <- function(df, conditions) {
   exp <- strsplit(conditions, ",")
   exp <- exp[[1]]
-  df <- df  %.% group_by(names(df)[1]) %.% s_filter(exp)
+  df <- df  %>% group_by(names(df)[1]) %>% s_filter(exp)
   df <- df[-ncol(df)]
   beigeTable(df)
 }
@@ -151,14 +151,14 @@ filterTable <- function(df, conditions) {
 selectTable <- function(df, conditions) {
   exp <- strsplit(conditions, ",")
   exp <- exp[[1]]
-  df <- df %.% s_select(exp)
+  df <- df %>% s_select(exp)
   beigeTable(df)
 }
 
 mutateTable <- function(df, conditions) {
   exp <- strsplit(conditions, ",")
   exp <- exp[[1]]
-  df2 <- df  %.% group_by(names(df)[1]) %.% s_mutate(exp)
+  df2 <- df  %>% group_by(names(df)[1]) %>% s_mutate(exp)
   df2 <- df2[-(ncol(df)+1)]
   beigeTable(df2)
 }
