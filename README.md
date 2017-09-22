@@ -24,9 +24,3 @@ Similarly, for the `rmd` apps
 ```{r}
 shiny::runGitHub("shiny_apps", "bborgesr", subdir = "rmd")
 ```
-
-=====
-
-**About me:**
-My name is Barbara and I'm a rising senior in Stats and CS at Macalester College. I love computational statistics and using R to transform complicated things into beautiful things (especially through visualization). In fact, the inspiration for these very apps is to help people understand and visualize some really cool data concepts (joining, grouping, summarizing...). I hope this proves right! If you have any suggestions, feel free to contact me at barb.b.ribeiro@gmail.com
-
