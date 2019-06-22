@@ -3,11 +3,18 @@ library(mosaic)
 library(RCurl)
 source("helpers.R")
 
-
-datasets <- list( Galton = data.frame(Galton, stringsAsFactors = FALSE), 
+Galton <- Galton %>%  # remove factors
+  mutate(family = as.numeric(as.character(family)),
+         sex = as.character(sex))
+SwimRecords <- SwimRecords %>%
+  mutate(sex = as.character(sex))
+TenMileRace <- TenMileRace %>%
+  mutate(state = as.character(state),
+         sex = as.character(sex))
+datasets <- list( Galton = Galton, 
                   Dimes = data.frame(Dimes, stringsAsFactors = FALSE), 
-                  SwimRecords = data.frame(SwimRecords, stringsAsFactors = FALSE), 
-                  TenMileRace = data.frame(TenMileRace, stringsAsFactors = FALSE), 
+                  SwimRecords = SwimRecords, 
+                  TenMileRace = TenMileRace, 
                   "Maternal Death Rates" = read.csv("maternal.csv", stringsAsFactors=FALSE),
                   "Obesity Rates" = read.csv("obesity.csv", stringsAsFactors=FALSE),
                   "GDP" = read.csv("GDP.csv", stringsAsFactors=FALSE),
