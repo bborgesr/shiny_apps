@@ -77,7 +77,8 @@ end_table <- function(df, cells) {
 
 normalTable = function(df, group, order = c(FALSE, TRUE)) {  
   for (i in 1:length(group) ) {
-    df[[ group[[i]] ]] <- as.factor(df[[ group[[i]] ]])
+    #df[[ group[[i]] ]] <- as.factor(df[[ group[[i]] ]])
+    df[[ group[[i]] ]] <- as.character(df[[ group[[i]] ]])  # replaced as.factor with as.character
   }
   
   cells <- data.frame()
